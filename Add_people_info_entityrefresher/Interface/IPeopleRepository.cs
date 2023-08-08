@@ -6,9 +6,9 @@ namespace Add_people_info_entityrefresher.Interface
     {
         bool Add(People people);
         public IEnumerable<People> Getall();
-
+        public People GetById(int id);
         bool Update();
-        bool Delete();
+        bool Delete(People people);
         bool Save();
     }
 }

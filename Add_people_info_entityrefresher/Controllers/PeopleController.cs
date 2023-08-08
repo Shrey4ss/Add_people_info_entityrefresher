@@ -16,6 +16,14 @@ namespace Add_people_info_entityrefresher.Controllers
         {
             return View();
         }
+
+        public IActionResult Delete(int id)
+        {
+            var delete = _peopleRepository.GetById(id);
+            _peopleRepository.Delete(delete);
+            return RedirectToAction("ViewPeople");
+
+        }
         public IActionResult Add(People people)
         {
             if(ModelState.IsValid) 
