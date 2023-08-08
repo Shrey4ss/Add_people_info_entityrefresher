@@ -1,10 +1,13 @@
 using Add_people_info_entityrefresher.Data;
+using Add_people_info_entityrefresher.Interface;
+using Add_people_info_entityrefresher.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IPeopleRepository,PeopleRepository>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
