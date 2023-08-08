@@ -1,0 +1,58 @@
+﻿@model People
+<div class="container py-2">
+    <div class="row pt-12 border">
+        <div>
+            <form class="row" method="post" asp-action="Add">
+                <div class="border col-12">
+                    <h2>Add Debit From Bank</h2>
+
+                </div>
+
+                <div class=" py-2 col-12">
+                    <label>First Name</label>
+
+                    <input type="text" class="form-control" aria-required="true" asp-for="FName" />
+
+                    <span asp-validation-for="FName" class="text-danger"></span>
+                </div>
+                <div class=" py-2 col-12">
+                    <label>Last Name</label>
+
+                    <input type="text" class="form-control" aria-required="true" asp-for="Lname" />
+
+                    <span asp-validation-for="Lname" class="text-danger"></span>
+                </div>
+                <div class=" py-2 col-12">
+                    <label>Age</label>
+
+                    <input type="number" class="form-control" aria-required="true" asp-for="Age" />
+
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+                <div class=" py-2 col-12">
+                    <label>About</label>
+
+                    <input type="text" class="form-control" aria-required="true" asp-for="About" />
+
+                    <span asp-validation-for="About" class="text-danger"></span>
+                </div>
+
+
+
+
+
+                <div class="row  pb-2 ">
+
+                    <div class="col-12 col-md-6 pb-1">
+                        <button type="submit" class="btn btn-primary form-control " style="height:50px;">Add</button>
+                    </div>
+                    <div class="col-12 col-md-6 pb-1">
+                        <a asp-controller="Home" asp-action="Index" value="Add to Cart" class="btn btn-outline-secondary form-control" style="height:50px;">Back to Home</a>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
