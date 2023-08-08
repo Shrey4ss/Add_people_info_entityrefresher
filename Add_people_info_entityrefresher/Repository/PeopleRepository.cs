@@ -19,9 +19,22 @@ namespace Add_people_info_entityrefresher.Repository
             return Save();
         }
 
-        public bool Delete()
+        public bool Delete(People people)
         {
-            throw new NotImplementedException();
+            _context.Peoples.Remove(people);
+            return Save();
+        }
+
+        public IEnumerable<People> Getall()
+        {
+            var all_people = _context.Peoples.ToList();
+            return all_people;
+        }
+
+        public People GetById(int id)
+        {
+            var Id_people = _context.Peoples.Single(x => x.Id == id);
+            return Id_people;
         }
 
         public bool Save()

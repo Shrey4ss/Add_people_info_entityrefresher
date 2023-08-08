@@ -1,0 +1,40 @@
+﻿@model IEnumerable<People>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <th scope="row">@v.Id</th>
+                <td>@v.FName @v.Lname</td>
+                <td>@v.Age</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-route-id="@v.Id" asp-action="Add" class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Detailed View</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="w-50 btn-group" role="group">
+                        <a asp-route-id="@v.Id" asp-action="Delete" class="btn btn-danger mx-2"> <i class="bi bi-pencil-square"></i> Delete Person</a>
+                    </div>
+                </td>
+            </tr>
+        }
+        <div class="row">
+            <div class="col-11 w-20 btn-group" role="group">
+            </div>
+            <div class="col-1 w-20 btn-group" role="group">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary mx-2"> Back</a>
+            </div>
+        </div>
+
+    </tbody>
+</table>
