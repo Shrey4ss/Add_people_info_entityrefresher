@@ -32,5 +32,11 @@ namespace Add_people_info_entityrefresher.Controllers
             }
             return View("Index");
         }
+
+        public IActionResult ViewPeople()
+        {
+            var all = _peopleRepository.Getall();
+            return View(all);
+        }
     }
 }

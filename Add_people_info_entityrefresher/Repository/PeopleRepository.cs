@@ -24,6 +24,12 @@ namespace Add_people_info_entityrefresher.Repository
             throw new NotImplementedException();
         }
 
+        public IEnumerable<People> Getall()
+        {
+            var all_people = _context.Peoples.ToList();
+            return all_people;
+        }
+
         public bool Save()
         {
             var saved = _context.SaveChanges();
